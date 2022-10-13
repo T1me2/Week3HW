@@ -3,9 +3,7 @@ import os
 
 # Module for reading CSV files
 import csv
-from telnetlib import theNULL
-from pyparsing import col
-
+#open csv
 csvpath = os.path.join('..', 'Resources', 'election_data.csv')
 
 
@@ -65,20 +63,11 @@ with open(csvpath) as csvfile:
     #Write results to txt file
     output_path = os.path.join("output", "El_Results.txt")
 
-    #with open("El_Results.txt") as file:
-     #   for line in file
-
-      #  txtwriter = text
-
-  #  f = 'El_Results.txt'
-   # with open(file, 'w') as text:
-   #     text.write("slkdjfa")
-
     f = open("El_Results.txt", "w+",)
     f.write("Election Results\n")
     f.write("---------------------------\n")
     f.write("Total Votes:" + f"{Tvotes}\n")
-    f.write("---------------------------")
+    f.write("---------------------------\n")
     f.write("Charles Casper Stockham:"+ f"{CCS_pct:.3%}"+ "("+ f"{TotalC_C_S}" + ")\n")
     f.write("Diana DeGette:"+ f"{DD_pct:.3%}"+"("+ f"{TotalD_D}" +")\n")
     f.write("Raymon Anthony Doane:"+ f"{RAD_pct:.3%}"+ "("+ f"{TotalR_A_D}" + ")\n")
