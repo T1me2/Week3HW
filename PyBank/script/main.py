@@ -3,9 +3,6 @@ import os
 
 # Module for reading CSV files
 import csv
-from telnetlib import theNULL
-
-from pyparsing import col
 
 csvpath = os.path.join('..', 'Resources', 'budget_data.csv')
 
@@ -66,10 +63,18 @@ with open(csvpath) as csvfile:
     print("---------------------------------")
     print("Total months: ", TotalM)
     print("Total: $",TotalPL)
-    #print("prow", prow)
-    #print("linechange", linechange) 
-    #print("Totalchange", Totalchange)
     print("Averagechange", Averagechange)
     print("Greatest Increase in Profits: ", bestmonth ,"$", "(",challenger,")")
     print("Greatest Decrease in Profits: ", worstmonth ,"$", "(",Lchallenger,")")
 
+    #write to text file
+    f = open("Financial_Analysis.txt", "w+",)
+    f.write("Financial Analysis\n")
+    f.write("---------------------------------\n")
+    f.write("Total months: " + f"{TotalM}\n")
+    f.write("Total: $" + f"{TotalPL}\n")
+    f.write("Averagechange"  f"{Averagechange}\n")
+    f.write("Greatest Increase in Profits: "+ f"{bestmonth}" + "$" + "(" + f"{challenger}" + ")\n")
+    f.write("Greatest Decrease in Profits: " + f"{worstmonth}" + "$" + "(" + f"{Lchallenger}" +")")
+    
+   
